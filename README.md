@@ -1,30 +1,16 @@
-# Insight_Project_Framework
-Framework for machine learning projects at Insight Data Science.
+# AutoMani
+This project is to help a robot in automated manicure process to track down micro movements of finger. Image segmentation is performed on real time images during the manicure process to find pixels of the finger.  
 
 ## Motivation for this project format:
-- **Insight_Project_Framework** : Put all source code for production within structured directory
-- **tests** : Put all source code for testing in an easy to find location
-- **configs** : Enable modification of all preset variables within single directory (consisting of one or many config files for separate tasks)
-- **data** : Include example a small amount of data in the Github repository so tests can be run to validate installation
-- **build** : Include scripts that automate building of a standalone environment
-- **static** : Any images or content to include in the README or web framework if part of the pipeline
+People can either visit a nail salon, which is time consuming and expensive, or alternatively, paint their nails at home, which is cumbersome and often looks amateur. Yet there is no innovation breakthrough in painting nails. 
+Want to change the way people paint their nails and spend their time. 
+
+
 
 ## Setup
-Clone repository and update python path
-```
-repo_name=Insight_Project_Framework # URL of your new repository
-username=mrubash1 # Username for your personal github account
-git clone https://github.com/$username/$repo_name
-cd $repo_name
-echo "export $repo_name=${PWD}" >> ~/.bash_profile
-echo "export PYTHONPATH=$repo_name/src:${PYTHONPATH}" >> ~/.bash_profile
-source ~/.bash_profile
-```
-Create new development branch and switch onto it
-```
-branch_name=dev-readme_requisites-20180905 # Name of development branch, of the form 'dev-feature_name-date_of_creation'}}
-git checkout -b $branch_name
-```
+Clone this repo to a machine with an NVidia card (tested on aws p2.xlarge instance).
+
+git clone https://github.com/Naveen-Dodda/insight-ai
 
 ## Initial Commit
 Lets start with a blank slate: remove `.git` and re initialize the repo
