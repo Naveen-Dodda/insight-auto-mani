@@ -1,4 +1,22 @@
-# To install these Python dependencies, please type:
-# pip install -r requirements.txt
+!git clone https://github.com/tensorflow/models.git
 
-streamlit
+%cd /content/models/research
+
+!protoc object_detection/protos/*.proto --python_out=.
+
+%set_env PYTHONPATH=/content/models/research:/content/models/research/slim
+
+!python object_detection/builders/model_builder_test.py
+
+
+
+Before training; download weights of a pretrained model form following link
+
+https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md
+
+
+!python object_detection/legacy/train.py \
+--train_dir= < path to load a pretarined model>
+--pipeline_config_path=<path to the config file that is edited mask_rcnn_resnet50_atrous_coco.config > 
+
+
