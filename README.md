@@ -1,11 +1,13 @@
 # AutoMani
-A deep learning model to perfrom segmetation on images provided a robot and provide contours of finger. This is model provided information of all position all the pixels related to finger.The presentation slides for this project are provided as[Google Slides](https://drive.google.com/open?id=1fJP-UhYJfN1BGsrhc85v0OSsd_AJIWoYlNtNQ7Ev6mU)
-## Problem Statement
+A deep learning model to perfrom segmetation on images provided a robot and provide contours of finger. This is model provided information of all position all the pixels related to finger.The presentation slides for this project are provided as [Google Slides](https://drive.google.com/open?id=1fJP-UhYJfN1BGsrhc85v0OSsd_AJIWoYlNtNQ7Ev6mU)
 
+## Problem Statement
+I worked on this project to help a company that is trying to automate manicure process. They have trouble to guide the robot during manicure process ; traditional methods like canny edge detection fails to provide contours of finger during painting process. So I want to introduce a deep learning solution to track down micro movements of finger that can guide robot.
 
 
 
 ## Setup
+This project comes in two repositories. This repository, for general purpose scripts and documentation, and a forked version of the [TensorFlow model](https://github.com/Naveen-Dodda/models) repository which is modified to support finger segmentation application. 
 Clone this repo to a machine with an NVidia card (tested on aws p2.xlarge instance).
 
 git clone https://github.com/Naveen-Dodda/insight-ai
