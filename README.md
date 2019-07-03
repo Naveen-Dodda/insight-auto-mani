@@ -1,9 +1,7 @@
 # AutoMani
-This project is to help a robot in automated manicure process to track down micro movements of finger. Image segmentation is performed on real time images during the manicure process to find pixels of the finger.  
+A deep learning model to perfrom segmetation on images provided a robot and provide contours of finger. This is model provided information of all position all the pixels related to finger.The presentation slides for this project are provided as[Google Slides](https://drive.google.com/open?id=1fJP-UhYJfN1BGsrhc85v0OSsd_AJIWoYlNtNQ7Ev6mU)
+## Problem Statement
 
-## Motivation
-People can either visit a nail salon, which is time consuming and expensive, or alternatively, paint their nails at home, which is cumbersome and often looks amateur. Yet there is no innovation breakthrough in painting nails. 
-Want to change the way people paint their nails and spend their time. 
 
 
 
