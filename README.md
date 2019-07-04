@@ -12,10 +12,10 @@ I worked on this project to help a company that is trying to automate manicure p
 - TensorFlow 1.14
 
 ## Build Environment
--Create a new anaconda environmnet to avoid confilts with other working environments. Run the following command to install all the required files. 
-
+- Create a new anaconda environmnet to avoid confilts with other working environments. Run the following command to install all the required files. 
+```  
 pip install -r requiremnts
-
+```  
 ## Setup
 This project comes in two repositories. This repository, for general purpose scripts and documentation, and a forked version of the [TensorFlow model](https://github.com/Naveen-Dodda/models) repository which is modified to support finger segmentation application. 
 Clone this repo to a machine with an NVidia card (tested on aws p2.xlarge instance).
@@ -37,23 +37,6 @@ export PYTHONPATH=$PYTHONPATH:`pwd`:`pwd`/slim
 protoc object_detection/protos/*.proto --python_out=.
 
 ``` 
-
-
-## Initial Commit
-Lets start with a blank slate: remove `.git` and re initialize the repo
-```
-cd $repo_name
-rm -rf .git   
-git init   
-git status
-```  
-You'll see a list of file, these are files that git doesn't recognize. At this point, feel free to change the directory names to match your project. i.e. change the parent directory Insight_Project_Framework and the project directory Insight_Project_Framework:
-Now commit these:
-```
-git add .
-git commit -m "Initial commit"
-git push origin $branch_name
-```
 
 
 ## Run Inference
