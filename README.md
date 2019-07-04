@@ -41,7 +41,7 @@ protoc object_detection/protos/*.proto --python_out=.
 
 ## Run Inference
 
-- A Frozen graph is provided in the repo to run your test right away. open the interactive jupyter notebook  models/reserach/iugifeweofn.ipny in the Tensorflow models repository. Please adjust the path in the notebook and point it to right directory of test images in the repo. 
+- A Frozen graph is provided in the repo to run your test right away. open the interactive jupyter notebook  models/reserach/Evalution_of_Auto_Mani.ipynb in the Tensorflow models repository. Please adjust the path in the notebook and point it to right directory of test images in the repo. 
 
 
 ## Build and Train a Coustom Model
@@ -64,6 +64,5 @@ working on it
 ```
 # Example
 
-# Step 1
-# Step 2
+Update the result pcitures and graphs if possible.
 ```
