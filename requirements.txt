@@ -5,6 +5,7 @@ cython
 matplotlib
 scikit-image
 tensorflow>=1.14.0
+tensorflow-gpu
 opencv-python
 IPython[all]
 
