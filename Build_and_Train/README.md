@@ -1,35 +1,27 @@
-# Setting up TF Records
-Make sure that data set is stored in this specific format'
-'
-'
-'
-'
-'
-'
+## Setting up TF Records
+- Make sure that data set is stored in this format, to make it convienet for creating tf record and training. Store all the raw images in .jpg format in a folder and all ground truth in .png format images other folder. Ensure names of raw image and corresponding ground truth are same. As a refrence you can how i have saved test images. Now lets move on to creating a tf_record.
 
-TensorFlow API accepts data in tf record format, so in order to facilitate training process on a new data set we have to generate a new tf record file. I have upadted tf_record.py to create a tf record for Coral Labs data set. Name of the modeified file is in this folder as Manicure_mask_rcnn_tf_record.py. You need to take this script and place it in the models/research/object_detection/dataset_tools.
+- TensorFlow API accepts data in tf record format, so in order to facilitate training process on a new data set we have to generate a new tf record file. I have upadted tf_record.py to create a tf record for Coral Labs data set. Name of the modeified file is in this folder as Manicure_mask_rcnn_tf_record.py. You need to take this script and place it in the models/research/object_detection/dataset_tools.Naming conventions of classes are stored in lable.pbtxt. Now in the command interface run the following commands.
 
-_Note: create_mask_rcnn_tf_record.py is modified in such a way that given a mask image, it should found bounding box around objects on it owns and hence you don't need to spend extra time annotating bounding boxes but it comes at a cost, if mask image has multiple objects of same class then it will not be able to find bounding box for each object of the same class rather it will take a bounding box encompassing all objects of that class.
+```
+cd models/research
 
-If you have multiple objects of the same class in some images then use labelImg library to generate xml files with bounding boxes and then place all the xml file generated from labelImg under Annotations/xmls folder. once you have bounding box annotation in xml files use create_mask_rcnn_tf_record_multi.py to convert the data to tensorflow record format.
-
-To download labelImg library along with its dependencies go to THIS LINK. Once you have the labelImg library downloaded on your PC, run lableImg.py. Select JPEGImages directory by clicking on Open Dir and change the save directory to Annotations/xmls by clicking on Change Save Dir. Now all you need to do is to draw rectangles around the object you are planning to detect. You will need to click on Create RectBox and then you will get the cursor to label the objects. After drawing rectangles around objects, give the name for the label and save it so that Annotations will get saved as the .xml file in Annotations/xmls folder._r
-
-
-
-
-## Problem Statement
-I worked on this project to help a company that is trying to automate manicure process. They have trouble to guide the robot during manicure process ; traditional methods like canny edge detection fails to provide contours of finger during painting process. So I want to introduce a deep learning solution to track down micro movements of finger that can guide robot.
-
-## Requisites
-
-- Ubuntu 16.04 LTS
-- Python 3
-- NVIDIA GPU (compute capability 6.0+) & CUDA cuDNN
-- TensorFlow 1.14
-
-## Build Environment
-- Create a new anaconda environmnet to avoid confilts with other working environments. Run the following command to install all the required files. 
+python object_detection/dataset_tools/create_mask_rcnn_tf_record.py --data_dir=<path_to_your_dataset_directory> --annotations_dir=<name_of_ground_truth_images_directory> --image_dir=<name_of_Raw_images_directory> --output_dir=<path_where_you_want_record_file_to_be_saved> --label_map_path=<path_of_label_map_file>
 ```  
-pip install -r requiremnts
-```  
+
+## Training
+
+- First important step is choosing the right model. I prefered to start my training over a pre-trained model from [TensroFlow Zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md). each model comes with a config file but i highly recommend to use the config files from [here] (https://github.com/tensorflow/models/tree/master/research/object_detection/samples/configs); which are upto date. You can aslo check the config file in this repo which is modified for this porject. Make changes in the config file to start training. 
+
+```
+python object_detection/legacy/train.py --train_dir=<path_to_the folder_for_saving_checkpoints> --pipeline_config_path=<path_to_config_file>
+
+```
+
+## Building a model to do inference. 
+
+- After training, in order to do inference task, forzen graph must be generated from saved check_points. Execute following commands to build a inference graph. Now you can follow inference procedure in main readme to test new model.
+
+```
+python object_detection/export_inference_graph.py --input_type=image_tensor --pipeline_config_path=<path_to_config_file> --trained_checkpoint_prefix=<path to saved checkpoint> --output_directory=<path_to_the_folder_for_saving_inference_graph>
+```
