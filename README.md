@@ -45,7 +45,7 @@ protoc object_detection/protos/*.proto --python_out=.
 
 
 ## Build and Train a Coustom Model
-- All the instructions to build and train the model on a new data set is given Train.txt
+- All the instructions to build and train the model on a new data set is given  in Build and Train folder. 
 
 
 ## Serve Model Flaks API 
