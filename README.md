@@ -2,7 +2,7 @@
 A deep learning model to perfrom segmetation on images provided a robot and provide contours of finger. This is model provided information of all position all the pixels related to finger.The presentation slides for this project are provided as [Google Slides](https://drive.google.com/open?id=1fJP-UhYJfN1BGsrhc85v0OSsd_AJIWoYlNtNQ7Ev6mU)
 
 ## Problem Statement
-I worked on this project to help a company that is trying to automate manicure process. They have trouble to guide the robot during manicure process ; traditional methods like canny edge detection fails to provide contours of finger during painting process. So I want to introduce a deep learning solution to track down micro movements of finger that can guide robot.
+I worked on this project to help a company that is automating manicure process. They have trouble to guide the robot during manicure process with traditional methods like canny edge detection which fails to provide contours of finger during painting process. So I want to introduce a deep learning solution to track down micro movements of finger that can guide robot.
 
 ## Requisites
 
