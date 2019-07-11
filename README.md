@@ -1,5 +1,5 @@
 # AutoMani
-A deep learning model to perfrom segmetation on images provided a robot and provide contours of finger. This is model provided information of all position all the pixels related to finger.The presentation slides for this project are provided as [Google Slides](https://drive.google.com/open?id=1fJP-UhYJfN1BGsrhc85v0OSsd_AJIWoYlNtNQ7Ev6mU)
+A deep learning model to perfrom segmetation on images from robot and provide contours of finger. This is model locates all the pixels related to finger.The presentation slides for this project are provided as [Google Slides](https://drive.google.com/open?id=1fJP-UhYJfN1BGsrhc85v0OSsd_AJIWoYlNtNQ7Ev6mU)
 
 ## Problem Statement
 I worked on this project to help a company that is automating manicure process. They have trouble to guide the robot during manicure process with traditional methods like canny edge detection which fails to provide contours of finger during painting process. So I want to introduce a deep learning solution to track down micro movements of finger that can guide robot.
@@ -14,7 +14,7 @@ I worked on this project to help a company that is automating manicure process. 
 ## Build Environment
 - Create a new anaconda environmnet to avoid confilts with other working environments. Run the following command to install all the required files. 
 ```  
-pip install -r requiremnts
+pip install -r requirements
 ```  
 ## Setup
 This project comes in two repositories. This repository, for general purpose scripts and documentation, and a forked version of the [TensorFlow model](https://github.com/Naveen-Dodda/models) repository which is modified to support finger segmentation application. 
@@ -24,7 +24,7 @@ Clone this repo to a machine with an NVidia card (tested on aws p2.xlarge instan
 ```
 cd ~
 git clone https://github.com/Naveen-Dodda/insight-auto-mani.git
-cd insight-auto-mani.git
+cd insight-auto-mani
 ```  
 
 - Clone the forked version of the [TensorFlow model](https://github.com/Naveen-Dodda/models) repository which has been modified for this project. Once you have cloned this repository, change your present working directory to models/reserarch/ and add it to your python path. If you want to add it permanently then you will have to make the change in your .bashrc file or you could add it temporarily for current session using the following commands:
@@ -41,7 +41,7 @@ protoc object_detection/protos/*.proto --python_out=.
 
 ## Run Inference
 
-- A Frozen graph is provided in the repo to run your test right away. open the interactive jupyter notebook  models/reserach/Evalution_of_Auto_Mani.ipynb in the Tensorflow models repository. Please adjust the path in the notebook and point it to right directory of test images in the repo. 
+- A Frozen graph is provided in the repo to run your test right away. open the interactive jupyter notebook  models/reserach/Evaluation_of_Auto_Mani.ipynb in the Tensorflow models repository. Please adjust the path in the notebook and point it to right directory of test images in the repo. 
 
 
 ## Build and Train a Coustom Model
