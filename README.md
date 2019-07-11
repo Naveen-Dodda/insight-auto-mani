@@ -55,4 +55,3 @@ protoc object_detection/protos/*.proto --python_out=.
 - Intersection Over Union (IOU) = 0.953
 - Pixel Accuracy= 97.34
 
-- 
