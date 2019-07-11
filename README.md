@@ -48,21 +48,11 @@ protoc object_detection/protos/*.proto --python_out=.
 - All the instructions to build and train the model on a new data set is given  in Build and Train folder. 
 
 
-## Serve Model Flaks API 
-- Include instructions of how to set up a REST or RPC endpoint
-- This is for running remote inference via a custom model
-```
-# 
-
-
-working on it 
-```
 
 ## Reslusts 
 - The current model used for segmetation task is Mask_RCNN with inception v2 as back bone network, trained on 130 images on single gpu, can performe segmetation task with pixel to pixel accoracy of 95.83%. 
 - Inference speed of model is 4fps on single gpu.
-```
-# Example
+- Intersection Over Union (IOU) = 0.953
+- Pixel Accuracy= 97.34
 
-Update the result pcitures and graphs if possible.
-```
+- 
